@@ -1,20 +1,21 @@
-const express = require('express')
-const { 
-    getRecetaById,
-    getRecetasByPrestador,
-    getRecetasByPrestadorAndEstado,
-    updateReceta,
-    createReceta
-} = require('../controllers/recetasController')
-const validarSolicitudModificacion = require('../middleware/validarSolicitudModificacion')
-const validarReceta = require('../middleware/validarReceta')
+import express from 'express';
+import RecetasController from '../controllers/recetasController.js';
+import validarSolicitudModificacion from '../middleware/validarSolicitudModificacion.js';
+import validarReceta from '../middleware/validarReceta.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/:id', getRecetaById)
-router.get('/prestador/:prestadorId', getRecetasByPrestador)
-router.get('/prestador/:prestadorId/:estados', getRecetasByPrestadorAndEstado)
-router.patch('/:id', validarSolicitudModificacion, updateReceta)
-router.post('/', validarReceta, createReceta)
+router.get('/:id', RecetasController.getRecetaById);
+router.get('/prestador/:prestadorId', RecetasController.getRecetasByPrestador);
+router.get(
+    '/prestador/:prestadorId/:estados',
+    RecetasController.getRecetasByPrestadorAndEstado
+);
+router.patch(
+    '/:id',
+    validarSolicitudModificacion,
+    RecetasController.updateReceta
+);
+router.post('/', validarReceta, RecetasController.createReceta);
 
-module.exports = router
+export default router;

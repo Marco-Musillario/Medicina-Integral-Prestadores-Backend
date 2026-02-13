@@ -1,7 +1,7 @@
-const Joi = require('joi')
+import Joi from 'joi';
 
 const schemaSituacionModificacion = Joi.object({
-    fechaFin: Joi.alternatives().try(Joi.date(), Joi.valid(null)).required()
-})
+    fechaFin: Joi.alternatives().try(Joi.date(), Joi.valid(null)).required(),
+});
 
-module.exports = schemaSituacionModificacion
+export default schemaSituacionModificacion;

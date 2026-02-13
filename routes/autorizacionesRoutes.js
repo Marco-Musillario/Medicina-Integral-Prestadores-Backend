@@ -1,20 +1,28 @@
-const express = require('express')
-const { 
-    getAutorizacionById,
-    getAutorizacionesByPrestador,
-    getAutorizacionesByPrestadorAndEstado,
-    updateAutorizacion,
-    createAutorizacion
-} = require('../controllers/autorizacionesController')
-const validarSolicitudModificacion = require('../middleware/validarSolicitudModificacion')
-const validarAutorizacion = require('../middleware/validarAutorizacion')
+import express from 'express';
+import AutorizacionesController from '../controllers/autorizacionesController.js';
+import validarSolicitudModificacion from '../middleware/validarSolicitudModificacion.js';
+import validarAutorizacion from '../middleware/validarAutorizacion.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/:id', getAutorizacionById)
-router.get('/prestador/:prestadorId', getAutorizacionesByPrestador)
-router.get('/prestador/:prestadorId/:estados', getAutorizacionesByPrestadorAndEstado)
-router.patch('/:id', validarSolicitudModificacion, updateAutorizacion)
-router.post('/', validarAutorizacion, createAutorizacion)
+router.get('/:id', AutorizacionesController.getAutorizacionById);
+router.get(
+    '/prestador/:prestadorId',
+    AutorizacionesController.getAutorizacionesByPrestador
+);
+router.get(
+    '/prestador/:prestadorId/:estados',
+    AutorizacionesController.getAutorizacionesByPrestadorAndEstado
+);
+router.patch(
+    '/:id',
+    validarSolicitudModificacion,
+    AutorizacionesController.updateAutorizacion
+);
+router.post(
+    '/',
+    validarAutorizacion,
+    AutorizacionesController.createAutorizacion
+);
 
-module.exports = router
+export default router;

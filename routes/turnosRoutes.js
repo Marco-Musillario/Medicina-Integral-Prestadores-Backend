@@ -1,18 +1,18 @@
-const express = require("express");
-const {
-  getTurnosByPrestador,
-  getTurnosByPrestadorAndEspecialidad,
-  createTurno,
-  updateTurno,
-  getTurnosByPrestadorAndFecha
-} = require("../controllers/turnosController.js");
+import express from 'express';
+import TurnosController from '../controllers/turnosController.js';
 
 const router = express.Router();
 
-router.get("/:prestadorId", getTurnosByPrestador);
-router.get("/:prestadorId/:especialidad", getTurnosByPrestadorAndEspecialidad);
-router.get("/:prestadorId/fecha/:fecha", getTurnosByPrestadorAndFecha)
-router.post("/", createTurno)
-router.patch("/:id", updateTurno)
+router.get('/:prestadorId', TurnosController.getTurnosByPrestador);
+router.get(
+    '/:prestadorId/:especialidad',
+    TurnosController.getTurnosByPrestadorAndEspecialidad
+);
+router.get(
+    '/:prestadorId/fecha/:fecha',
+    TurnosController.getTurnosByPrestadorAndFecha
+);
+router.post('/', TurnosController.createTurno);
+router.patch('/:id', TurnosController.updateTurno);
 
-module.exports = router;
+export default router;

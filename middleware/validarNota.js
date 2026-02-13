@@ -1,10 +1,12 @@
-const schemaNota = require('./schema/schemaNota')
+import schemaNota from './schema/schemaNota.js';
 
 const validarNota = (req, res, next) => {
-    const {error} = schemaNota.validate(req.body, {abortEarly: false})
-    if(error){
-        return res.status(400).json({message: "datos invalidos", error: error})
+    const { error } = schemaNota.validate(req.body, { abortEarly: false });
+    if (error) {
+        return res
+            .status(400)
+            .json({ message: 'datos invalidos', error: error });
     }
-    next()
-}
-module.exports = validarNota
+    next();
+};
+export default validarNota;

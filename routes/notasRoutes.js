@@ -1,17 +1,15 @@
-const {Router} = require('express');
-const {
-  getNotasByAfiliado,
-  getNotasByAfiliadoAndPrestador,
-  createNota,
-  updateNota
-} = require("../controllers/notasController.js");
-const validarNota = require('../middleware/validarNota.js');
+import express from 'express';
+import NotasController from '../controllers/notasController.js';
+import validarNota from '../middleware/validarNota.js';
 
-const router = Router();
+const router = express.Router();
 
-router.get("/:afiliadoId", getNotasByAfiliado);
-router.get("/:afiliadoId/:prestador", getNotasByAfiliadoAndPrestador);
-router.post("/:turnoId", validarNota, createNota);
-router.patch("/:id", updateNota)
+router.get('/:afiliadoId', NotasController.getNotasByAfiliado);
+router.get(
+    '/:afiliadoId/:prestador',
+    NotasController.getNotasByAfiliadoAndPrestador
+);
+router.post('/:turnoId', validarNota, NotasController.createNota);
+router.patch('/:id', NotasController.updateNota);
 
-module.exports = router;
+export default router;

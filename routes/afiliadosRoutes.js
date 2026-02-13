@@ -1,18 +1,15 @@
-const express = require("express");
-const {
-  getAfiliadoById,
-  getGrupoFamiliar,
-  createAfiliado,
-  updateAfiliado,
-  deleteAfiliado,
-} = require("../controllers/afiliadosController.js");
+import express from 'express';
+import AfiliadosController from '../controllers/afiliadosController.js';
 
 const router = express.Router();
 
-router.get("/:id", getAfiliadoById);
-router.get("/grupo-familiar/:nroGrupoFamiliar", getGrupoFamiliar);
-router.post("/", createAfiliado);
-router.put("/:id", updateAfiliado);
-router.delete("/:id", deleteAfiliado);
+router.get('/:id', AfiliadosController.getAfiliadoById);
+router.get(
+    '/grupo-familiar/:nroGrupoFamiliar',
+    AfiliadosController.getGrupoFamiliar
+);
+router.post('/', AfiliadosController.createAfiliado);
+router.put('/:id', AfiliadosController.updateAfiliado);
+router.delete('/:id', AfiliadosController.deleteAfiliado);
 
-module.exports = router;
+export default router;

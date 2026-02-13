@@ -1,13 +1,17 @@
-const express = require('express')
-const {
-    getRegistrosByPrestadorAndDate,
-    createRegistro
-} = require('../controllers/registroSolicitudController')
-const validarRegistroSolicitud = require('../middleware/validarRegistroSolicitud')
+import express from 'express';
+import RegistroSolicitudController from '../controllers/registroSolicitudController.js';
+import validarRegistroSolicitud from '../middleware/validarRegistroSolicitud.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/:prestadorId', getRegistrosByPrestadorAndDate)
-router.post('/', validarRegistroSolicitud, createRegistro)
+router.get(
+    '/:prestadorId',
+    RegistroSolicitudController.getRegistrosByPrestadorAndDate
+);
+router.post(
+    '/',
+    validarRegistroSolicitud,
+    RegistroSolicitudController.createRegistro
+);
 
-module.exports = router
+export default router;

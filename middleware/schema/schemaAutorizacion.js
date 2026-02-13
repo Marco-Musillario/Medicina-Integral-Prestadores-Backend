@@ -1,4 +1,4 @@
-const Joi = require('joi')
+import Joi from 'joi';
 
 const schemaAutorizacion = Joi.object({
     fecha: Joi.date().required(),
@@ -7,7 +7,7 @@ const schemaAutorizacion = Joi.object({
     lugar: Joi.string().required(),
     observacion: Joi.string().required(),
     AfiliadoId: Joi.number().required(),
-    PrestadorId: Joi.number().required()
-})
+    PrestadorId: Joi.number().required(),
+});
 
-module.exports = schemaAutorizacion
+export default schemaAutorizacion;

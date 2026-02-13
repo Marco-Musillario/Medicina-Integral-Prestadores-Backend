@@ -1,10 +1,12 @@
-const Joi = require('joi')
+import Joi from 'joi';
 
 const schemaRegistroSolicitud = Joi.object({
     tipo: Joi.string().valid('reintegro', 'receta', 'autorizacion').required(),
-    estado: Joi.string().valid('Recibido','En análisis', 'Observado', 'Aprobado', 'Rechazado').required(),
+    estado: Joi.string()
+        .valid('Recibido', 'En análisis', 'Observado', 'Aprobado', 'Rechazado')
+        .required(),
     fecha: Joi.date().required(),
-    PrestadorId: Joi.number().required()
-})
+    PrestadorId: Joi.number().required(),
+});
 
-module.exports = schemaRegistroSolicitud
+export default schemaRegistroSolicitud;

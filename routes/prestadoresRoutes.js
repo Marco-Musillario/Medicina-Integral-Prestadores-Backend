@@ -1,14 +1,10 @@
-const express = require('express')
-const { 
-    validatePassword,
-    registrarUsuario,
-    getMedicosDeCentro
-} = require('../controllers/prestadoresController')
+import express from 'express';
+import prestadoresController from '../controllers/prestadoresController.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/registrar', registrarUsuario)
-router.post('/validar', validatePassword)
-router.get('/medicos/:centroId', getMedicosDeCentro)
+router.post('/registrar', prestadoresController.registrarUsuario);
+router.post('/validar', prestadoresController.validatePassword);
+router.get('/medicos/:centroId', prestadoresController.getMedicosDeCentro);
 
-module.exports = router
+export default router;

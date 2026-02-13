@@ -1,4 +1,4 @@
-const Joi = require('joi')
+import Joi from 'joi';
 
 const schemaReintegro = Joi.object({
     fecha: Joi.date().required(),
@@ -14,7 +14,7 @@ const schemaReintegro = Joi.object({
     cbu: Joi.number().required(),
     observacion: Joi.string().required(),
     AfiliadoId: Joi.number().required(),
-    PrestadorId: Joi.number().required()
-})
+    PrestadorId: Joi.number().required(),
+});
 
-module.exports = schemaReintegro
+export default schemaReintegro;

@@ -1,4 +1,4 @@
-const Joi = require('joi')
+import Joi from 'joi';
 
 const schemaReceta = Joi.object({
     fecha: Joi.date().required(),
@@ -9,7 +9,7 @@ const schemaReceta = Joi.object({
     presentacion: Joi.string().required(),
     observacion: Joi.string().required(),
     AfiliadoId: Joi.number().required(),
-    PrestadorId: Joi.number().required()
-})
+    PrestadorId: Joi.number().required(),
+});
 
-module.exports = schemaReceta
+export default schemaReceta;
