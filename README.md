@@ -1,5 +1,7 @@
 Repositorio BACKEND del grupo 16 de la materia Desarrollo de Aplicaciones (UNAHUR).
 
+[Repositorio Frontend](https://github.com/Marco-Musillario/Medicina-Integral-Prestadores-Frontend.git)
+
 ## Integrantes del grupo
 - Marcos Cravero  
 - Nicolás García  
@@ -26,7 +28,8 @@ Incluye la base de datos de:
 ## Dependencias usadas
 - Nodemon  
 - Cors
-- Express  
+- Express
+- Sequelize
 
 ---
 
@@ -40,18 +43,20 @@ Incluye la base de datos de:
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/DesApp-2025c2-Grupo16/backend2.git
-   cd backend2
+   git clone https://github.com/Marco-Musillario/Medicina-Integral-Prestadores-Frontend.git backend
+   cd backend
 2. Crear los contenedores de docker:
    ```bash
    docker compose up -d
 3. Instalar dependencias:
    ```bash
    npm install
-4. Levantar en modo desarrollo:
+4. Ejecutar los seeders \(Opcional):
+   ```bash
+   npm run db
+5. Levantar en modo desarrollo:
    ```bash
    npm run dev
-5. Abrir en el navegador:
-http://localhost:3001
+6. Clonar y ejecutar el [frontend](https://github.com/Marco-Musillario/Medicina-Integral-Prestadores-Frontend.git)
 
 ---
