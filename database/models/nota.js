@@ -36,6 +36,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'Nota',
+            tableName: 'Notas',
             timestamps: false,
         }
     );

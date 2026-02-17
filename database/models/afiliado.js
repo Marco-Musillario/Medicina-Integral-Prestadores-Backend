@@ -43,6 +43,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'Afiliado',
+            tableName: 'Afiliados',
             timestamps: false,
         }
     );

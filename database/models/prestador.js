@@ -44,6 +44,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'Prestador',
+            tableName: 'Prestadores',
             timestamps: false,
             defaultScope: {
                 attributes: {

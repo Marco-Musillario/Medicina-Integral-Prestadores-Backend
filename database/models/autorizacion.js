@@ -51,6 +51,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'Autorizacion',
+            tableName: 'Autorizaciones',
             timestamps: false,
             defaultScope: {
                 include: [

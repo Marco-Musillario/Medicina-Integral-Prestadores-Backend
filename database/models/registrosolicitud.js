@@ -30,6 +30,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'RegistroSolicitud',
+            tableName: 'RegistrosSolicitudes',
             timestamps: false,
         }
     );

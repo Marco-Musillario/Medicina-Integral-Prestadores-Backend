@@ -51,6 +51,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'Receta',
+            tableName: 'Recetas',
             timestamps: false,
             defaultScope: {
                 include: [

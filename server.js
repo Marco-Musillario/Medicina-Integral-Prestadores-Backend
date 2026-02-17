@@ -4,7 +4,7 @@ import cors from 'cors';
 // Rutas
 import db from './database/models/index.js';
 
-db.sequelize.sync({ alter: false });
+db.sequelize.sync();
 
 import afiliadosRoutes from './routes/afiliadosRoutes.js';
 import situacionesRoutes from './routes/situacionesRoutes.js';

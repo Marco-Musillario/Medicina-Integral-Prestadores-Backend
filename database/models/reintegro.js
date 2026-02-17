@@ -72,6 +72,7 @@ export default (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'Reintegro',
+            tableName: 'Reintegros',
             timestamps: false,
             defaultScope: {
                 include: [
