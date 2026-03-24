@@ -13,7 +13,7 @@ export default {
          * }], {});
          */
         await queryInterface.bulkInsert(
-            'RegistroSolicituds',
+            'RegistrosSolicitudes',
             [
                 {
                     id: 7,
@@ -9281,6 +9281,6 @@ export default {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        await queryInterface.bulkDelete('RegistroSolicituds', null, {});
+        await queryInterface.bulkDelete('RegistrosSolicitudes', null, {});
     },
 };

@@ -13,7 +13,7 @@ export default {
          * }], {});
          */
         await queryInterface.bulkInsert(
-            'Prestadors',
+            'Prestadores',
             [
                 {
                     id: 1,
@@ -74,6 +74,6 @@ export default {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        await queryInterface.bulkDelete('Prestadors', null, {});
+        await queryInterface.bulkDelete('Prestadores', null, {});
     },
 };

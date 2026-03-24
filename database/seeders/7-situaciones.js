@@ -13,7 +13,7 @@ export default {
          * }], {});
          */
         await queryInterface.bulkInsert(
-            'Situacions',
+            'Situaciones',
             [
                 {
                     id: 1,
@@ -146,6 +146,6 @@ export default {
          * Example:
          * await queryInterface.bulkDelete('People', null, {});
          */
-        await queryInterface.bulkDelete('Situacions', null, {});
+        await queryInterface.bulkDelete('Situaciones', null, {});
     },
 };
